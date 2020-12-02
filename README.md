@@ -24,9 +24,13 @@ Slurm has a completely different command line interface from Torque/Moab, which 
 5. When the example job finished, there should be a output file named slrum-###.out that prints the following
    
 	 ```
+	 	Wed Dec  2 11:49:50 EST 2020
 		/users/PAS1475/YOUR_USER_NAME
 		Running slrum jobs
+		Wed Dec  2 11:49:50 EST 2020
 	 ```
+
+	 
 Note: 
 
 You can log into Owens in the Slurm environment via SSH to one of the following hostnames: owens-slurm.osc.edu or owens-login03.hpc.osc.edu. You can also select '>_Owens SLURM Shell Access' under 'Clusters' with OSC OnDemand tool. 
