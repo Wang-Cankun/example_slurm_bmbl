@@ -5,9 +5,9 @@
 #PBS -l nodes=1:ppn=8:gpus=1
 #PBS -l mem=8GB
 
-time
+date
 module load python/3.6
 cd $HOME
 pwd
 echo 'Running PBS jobs'
-time
+date

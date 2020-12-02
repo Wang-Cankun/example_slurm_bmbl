@@ -6,9 +6,9 @@
 #SBATCH --ntasks=8
 #SBATCH --mem=8GB
 
-time 
+date 
 module load python/3.6
 cd $HOME
 pwd
 echo 'Running slrum jobs'
-time
+date
