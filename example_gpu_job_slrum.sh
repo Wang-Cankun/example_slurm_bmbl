@@ -7,7 +7,9 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=8GB
 
+time
 module load python/3.6
 cd $HOME
 pwd
 echo 'Running slrum jobs - using GPU'
+time
