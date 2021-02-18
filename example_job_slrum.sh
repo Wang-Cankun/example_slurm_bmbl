@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #SBATCH --job-name example_slurm_job
-#SBATCH --account PAS1475
+#SBATCH --account PCON0022
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1 
 #SBATCH --ntasks=8
