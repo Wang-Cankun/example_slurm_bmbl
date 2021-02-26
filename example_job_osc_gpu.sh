@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 
 #SBATCH --ntasks=8
 #SBATCH --gpus-per-node=1
-#SBATCH --mem=8GB
+#SBATCH --mem=64GB
 
 date
 module load python
