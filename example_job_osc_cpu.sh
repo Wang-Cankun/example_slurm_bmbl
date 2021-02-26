@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH --job-name example_slurm_job
+#SBATCH --job-name example_job_osc_cpu
 #SBATCH --account PCON0022
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1 
@@ -7,7 +7,7 @@
 #SBATCH --mem=8GB
 
 date 
-module load python/3.6
+module load python
 cd $HOME
 pwd
 echo 'Running slrum jobs'

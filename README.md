@@ -1,40 +1,105 @@
-# example_osc_slrum
+# Example slrum job scripts
 
-## Why should I test my job in Slurm environment?
+Example slurm scripts for BMBL users.
 
-Slurm has a completely different command line interface from Torque/Moab, which is the current job scheduler and resource manager used on Owens. OSC has been working on compatibility scripts to ensure that the transition goes as smoothly as possible, but users should expect that some things may not work exactly the same.
-
-## How to test my Owens job in Slurm environment? 
+## OSC
 
 1. Login [OSC OnDemand](https://ondemand.osc.edu/pun/sys/dashboard)
 2. Navigate tabs and open Slrum shell access:![Slrum tab](./img/tab-open-slrum.png)
-3. Clone this GitHub repository at your home directory:
-	```
-	cd ~
-	git clone https://github.com/Wang-Cankun/example_osc_slrum.git
-	cd example_osc_slrum
 
-	```
-4. Submit A slrum job
-   
-	 ```
-	 sbatch example_job_slrum.sh 
-	 ```
+## XSEDE
 
-5. When the example job finished, there should be a output file named slrum-###.out that prints the following
-   
+SSH to XSEDE bridges2 :
+
+```{shell}
+ssh username@bridges2.psc.xsede.org
 ```
+
+You can check project usage information by:
+
+```{shell}
+projects
+```
+## Submit a job
+
+Clone this GitHub repository at your home directory:
+
+```{shell}
+cd ~
+git clone https://github.com/Wang-Cankun/example_slrum_bmbl.git
+cd example_osc_slrum
+
+```
+Submit A slrum job
+   
+```{shell}
+sbatch example_job_slrum.sh 
+```
+
+Check your job status
+
+```
+squeue -u username
+```
+
+Cancel all your jobs
+
+```
+scancel -u username
+```
+
+When the example job finished, there should be a output file named slrum-###.out that prints the following
+   
+```{shell}
 Wed Dec  2 11:49:50 EST 2020
-/users/PAS1475/YOUR_USER_NAME
 Running slrum jobs
 Wed Dec  2 11:49:50 EST 2020
 ```
+## How to start an interactive job?
 
-	 
-Note: 
+### OSC-CPU
+```
+salloc --nodes=1 --ntasks=8 --mem=64GB --account PCON0022 --time=1:00:00 srun --pty /bin/bash
+```
+### OSC-GPU
+```
+salloc --nodes=1 --ntasks=8 --mem=64GB --account PCON0022 --gpus-per-node=1 --time=1:00:00 srun --pty /bin/bash
+```
 
-You can log into Owens in the Slurm environment via SSH to one of the following hostnames: owens-slurm.osc.edu or owens-login03.hpc.osc.edu. You can also select '>_Owens SLURM Shell Access' under 'Clusters' with OSC OnDemand tool. 
+### XSEDE-CPU
 
-After logging in, please submit your jobs as you currently do on Owens (OSC has enabled PBS compatibility layer so your current PBS batch scripts likely still work in Slurm). If it does not work, your workflow will probably fail after the official Slurm migration. Please check our [Slurm documentation page](https://www.osc.edu/supercomputing/knowledge-base/slurm_migration)
+Not supported on XSEDE-CPU:
+**salloc: error: Interactive usage is not permitted in partition EM**
+<!--
+```
+#salloc -p EM --nodes=1 --mem=128GB --ntasks=8 --account ccr180012p --time=1:00:00 srun --pty /bin/bash
+```
+-->
+### XSEDE-GPU
+```
+salloc -p GPU --nodes=1 --ntasks=8 --account ccr180012p --gpus=8 --time=1:00:00 srun --pty /bin/bash
+```
 
+## Other headers
 
+Send email notification
+
+```{bash}
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=cankun.wang@osumc.edu
+```
+
+Set output file format
+```{bash}
+#SBATCH --output=filemover_%j.log
+```
+
+## Reference
+
+- More information about [slrum job submission](https://www.osc.edu/supercomputing/batch-processing-at-osc/job-submission)
+
+- [Slurm documentation page](https://www.osc.edu/supercomputing/knowledge-base/slurm_migration)
+
+## Author
+
+[Cankun Wang](https://github.com/Wang-Cankun)
