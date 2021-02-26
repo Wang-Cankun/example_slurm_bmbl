@@ -27,7 +27,7 @@ Clone this GitHub repository at your home directory:
 ```{shell}
 cd ~
 git clone https://github.com/Wang-Cankun/example_slrum_bmbl.git
-cd example_osc_slrum
+cd example_slrum_bmbl
 
 ```
 Submit A slrum job
