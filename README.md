@@ -1,6 +1,6 @@
 # Example slrum job scripts
 
-Example slurm scripts for BMBL users.
+Example slurm scripts for [BMBL](https://u.osu.edu/bmbl/) users.
 
 ## OSC
 
