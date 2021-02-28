@@ -33,7 +33,7 @@ cd example_slrum_bmbl
 Submit A slrum job
    
 ```{shell}
-sbatch example_job_slrum.sh 
+sbatch example_job_osc_cpu.sh
 ```
 
 Check your job status
