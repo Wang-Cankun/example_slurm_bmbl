@@ -4,7 +4,7 @@
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1 
 #SBATCH --ntasks=24
-#SBATCH –-gpus=8
+#SBATCH --gpus=v100-32:8
 #SBATCH --mem=128GB
 #SBATCH -p GPU
 
