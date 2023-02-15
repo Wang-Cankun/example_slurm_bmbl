@@ -1,11 +1,11 @@
-# Example slrum job scripts
+# Example slurm job scripts
 
 Example slurm scripts for [BMBL](https://u.osu.edu/bmbl/) users.
 
 ## OSC
 
 1. Login [OSC OnDemand](https://ondemand.osc.edu/pun/sys/dashboard)
-2. Navigate tabs and open Slrum shell access:![Slrum tab](./img/tab-open-slrum.png)
+2. Navigate tabs and open Slurm shell access:![Slurm tab](./img/tab-open-slrum.png)
 
 ## XSEDE
 
@@ -26,11 +26,11 @@ Clone this GitHub repository at your home directory:
 
 ```{shell}
 cd ~
-git clone https://github.com/Wang-Cankun/example_slrum_bmbl.git
-cd example_slrum_bmbl
+git clone https://github.com/Wang-Cankun/example_slurm_bmbl.git
+cd example_slurm_bmbl
 
 ```
-Submit A slrum job
+Submit A slurm job
    
 ```{shell}
 sbatch example_job_osc_cpu.sh
@@ -48,11 +48,11 @@ Cancel all your jobs
 scancel -u username
 ```
 
-When the example job finished, there should be a output file named slrum-###.out that prints the following
+When the example job finished, there should be a output file named slurm-###.out that prints the following
    
 ```{shell}
 Wed Dec  2 11:49:50 EST 2020
-Running slrum jobs
+Running slurm jobs
 Wed Dec  2 11:49:50 EST 2020
 ```
 ## How to start an interactive job?
@@ -96,7 +96,7 @@ Set output file format
 
 ## Reference
 
-- More information about [slrum job submission](https://www.osc.edu/supercomputing/batch-processing-at-osc/job-submission)
+- More information about [slurm job submission](https://www.osc.edu/supercomputing/batch-processing-at-osc/job-submission)
 
 - [Slurm documentation page](https://www.osc.edu/supercomputing/knowledge-base/slurm_migration)
 
